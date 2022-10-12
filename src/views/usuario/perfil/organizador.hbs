@@ -1,0 +1,100 @@
+    <div class="container p-3">
+      <div class="row">
+        <div class="col-md-3 ">
+            {{!-- DATOS USUARIO --}}
+            <div class="card">
+            <div class="card-header d-flex justify-content-between bg-dark text-white">
+                <div class="text-center">
+                    <img src="/img/perfilbase.jpg" alt="Logo Fazt" class="card-img-top mx-auto m-2 rounded-circle w-50">
+                </div>
+            </div>
+            <div class="card-body">
+                
+                <strong><i class="fa-sharp fa-solid fa-file-signature"></i> Nombre Completo</strong>
+                <p class="text-muted">{{persona.nombre}}</p>
+                <hr>
+                
+                <strong><i class="fa-solid fa-id-card"></i> Carnet Identidad</strong>
+                <p class="text-muted">{{persona.ci}}</p>
+                <hr>
+
+                <strong><i class="fa-brands fa-whatsapp"></i> Telefono</strong>
+                <p class="text-muted">{{persona.telefono}}</p>
+                <hr>    
+
+            
+                  
+            </div>
+            {{!-- DATOS USUARIO --}}
+           </div> 
+            {{!-- OPCIONES --}}
+            <div class="container p-2">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4><i class="fa fa-list"></i> Opciones</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="form-group">
+                            <a href="" class="btn btn-success btn-block"> Editar Datos Personales</a>
+                        </div>
+                        <div class="form-group">
+                            <a href="/new_catalogo" class="btn  btn-primary btn-block"> Crear Evento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- OPCIONES --}}
+        </div>
+
+        <div class="col-md-9">
+            {{!-- LISTA EVENTOS --}}
+                <div class="card">
+                        <div class="card-header d-flex justify-content-between bg-dark text-white">
+                            <h4 class="card-title">Busqueda Eventos</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i> 
+                                    </span>
+                                </div>
+                                    <input type="text" aria-label="" class="form-control" placeholder="Escriba el Nombre del Evento">
+                            </div>
+                        </div>
+                </div>
+
+                <div class="container p-4">
+                    <div class="row">
+                            <table class="table table-bordered table-dark">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col"><i class="fa-solid fa-people-roof"> Titulo</i></th>
+                                        <th scope="col"><i class="fa fa-route"> Direccion </i> </th>
+                                        <th scope="col"><i class="fa-solid fa-calendar-days"> Fecha</i> </th>
+                                        <th scope="col"><i class="fa-solid fa-list">  Opciones</i> </th>
+                                    </tr>
+                                </thead>
+                                    {{#each eventosOrganizador}}
+                                <tbody>
+                                    <th class="">{{id_evento}}</th>
+                                    <th class="">{{titulo}}</th>
+                                    <th class="">{{direccion}}</th>
+                                    <th class="">{{fecha}}</th>
+                                    <th class="">
+                                        <a href="" class="btn btn-success"><i class="fa-solid fa-qrcode"></i></a>
+                                        <a href="" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/catalogo/{{id_catalogo}}" class="btn btn-secondary"><i class="fa-regular fa-images"></i></a>
+                                    </th>
+                                </tbody>
+                                    {{/each }}
+                            </table>
+                    </div>
+                </div>
+
+            {{!-- LISTA EVENTOS --}}
+        </div>
+
+      </div>
+    </div>

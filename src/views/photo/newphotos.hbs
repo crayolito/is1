@@ -1,0 +1,59 @@
+<div class="row mt-4">
+    <div class="col-md-4 mx-auto ">
+        <div class="card">
+            
+            <div class="card-header  bg-dark text-center text-white">
+                <h1>
+                    Subir Fotos
+                </h1>    
+            </div>
+
+            <div class="card-body bg-info">
+                <form action="/newphotos" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" name="id" value="{{persona.id}}" class="form-control" hidden>
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <div class="form-group">
+                                <input type="text" name="organizador_id"  class="form-control" value="{{persona.id}}" hidden>
+                            </div>
+                            
+                            <strong class="text-white"><i class="fa-solid fa-user-lock"></i> View Restrictions<strong>
+                            <select name="PrivilegiosVista" name="" class="form-control selectpicker" multiple data-live-search="true">
+                                <option selected disabled>Seleccione </option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <strong class="text-white"><i class="fa-solid fa-people-roof"></i> Signar Catalogo<strong>
+                            <select name="tituloEvento" name="" class="form-control selectpicker"  data-live-search="true">
+                                <option selected disabled>Seleccione: </option>
+                                {{#each eventosC}}
+                                <option>{{titulo}}</option>
+                                {{/each }}
+                            </select>
+                        </div>
+                        
+                    <div class="form-grouo">
+                        <div class="input-group"> 
+                            <div class="custom-file ">
+                                <input type="file" multiple name="photos_fotografo" class="custom-file-input " id="inputGroupFile01">
+                                <label for="inputGroupFile01 " class="custom-file-label ">Escoge las Fotos para Subir <i class="fa-solid fa-arrow-right"></i></label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-0 text-center">
+                        
+                        <button type="submit" class="btn btn-primary mt-2">Upload Photos</button>
+                        <a href="/perfil/fotografo" class="btn btn-secondary mt-2">Volver Perfil</a>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

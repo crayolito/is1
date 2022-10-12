@@ -1,0 +1,51 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card ">
+        <div class="card-header bg-dark  text-center">
+          <a href="" class="h1"><b>Create Event</b></a>
+        </div>
+        <div class="card-body bg-info ">
+          <form action="/new_catalog" method="POST">
+            
+              <div class="form-group">
+              <input type="text" name="organizador_id"  class="form-control" value="{{persona.id}}" hidden>
+            </div>
+
+
+            <div class="form-group">
+                <strong><i class="fa-sharp fa-solid fa-file-signature"></i> Nombre Evento</strong>
+              <input type="text" name="titulo"  class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <strong><i class="fa-solid fa-calendar-days"></i> Fecha</strong>
+              <input type="date" name="fecha"  class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <strong><i class="fa-solid fa-map-location-dot"></i> Direccion</strong>
+              <input type="text" name="direccion"  class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <strong><i class="fa-solid fa-magnifying-glass"></i> Designar Fotografos<strong>
+                <select name="FotografosDesignados" name="" class="form-control selectpicker" multiple data-live-search="true">
+                    <option selected disabled>Seleccione </option>
+                    {{#each fotografos}}
+                    <option >{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+              <div class="form-group text-center p-2 mb-0 ">
+                  <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i> Guardar </button>
+                  <a href="/perfil/organizador" class="btn btn-secondary"> Volver Perfil</a>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

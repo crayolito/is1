@@ -1,0 +1,55 @@
+ <style>
+.ejemploblur {
+   -webkit-filter: blur(3px);
+   -moz-filter: blur(3px);
+   -o-filter: blur(3px);
+   -ms-filter: blur(3px);
+   filter: blur(3px);
+}
+</style>
+    <div class="container p-4 ">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 ">
+                <div class="card animate__animated animate__backInDown ">
+                        {{#each InformacionFoto}}
+                        
+                            <img src={{url}} class="ejemploblur" /> 
+                        
+                <div class="card-body ">
+                            <form action="/checkout" method="POST">
+                                <div class="form-group">
+                                    <input type="text"  class="form-control" name="id_foto" value={{id_foto}} hidden>                                                          
+                                </div>
+                            <strong><i class="fa-solid fa-money-bill"> METODOS PAGO</i></strong>
+                            <div class="form-group text-center">
+                                <hr>      
+                                <button type="submit" id="checkout-button" class="btn btn-primary"><i class="fa fa-credit-card"> </i> Credit Card</a></button>
+                                <a href="" class="btn btn-success " type="button" data-toggle="modal" data-target="#exampleModalCenterWP"><i class="fa-brands fa-whatsapp"> </i>Whatsapp </a>
+                            </div>
+                        </form>
+                </div>
+                    <a href="/catalogo/{{id_catalogo}}" class="btn btn-dark " ><i class="fa-regular fa-images"> Volver AL Catalogo</i></a>
+                    {{/each}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenterWP" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-info"></i> NOTA INFORMACION</h5>
+                            <button type="button " class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Nr WhatsApp Fotografo con este podra coordinar Otros Pagos :</h5>
+                            <h5> - Envios Dominicilio <i class="fa fa-moped"></i></h5>
+                            <h5> - Recoger Fotos Studio</h5>
+                            <h5> - Pagar Tigo Money</h5>
+                        </div>
+                        </div>
+                    </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
