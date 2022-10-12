@@ -7,6 +7,7 @@ const flash = require('connect-flash')
 const MysqlStore = require('express-mysql-session');
 const pool = require('./database')
 const database = require('./keys')
+const {PORT} = require('./lib/config')
 const passport = require('passport');
 const  fileUpload = require('express-fileupload');
 require('dotenv').config()
@@ -18,7 +19,7 @@ const app = express();
 require('./lib/passport')
 
 // Settings
-app.set('port',process.env.PORT || 8000)
+app.set('port',PORT || 8000)
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs',exphbs.engine({
     defaultLayout: 'main',
