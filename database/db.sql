@@ -58,7 +58,6 @@ Create Table asignado(
 
 Create Table foto(
   id   INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  precio INT,
   nombre VARCHAR(255),
   url    VARCHAR(8000),
   catalogo_id INT,

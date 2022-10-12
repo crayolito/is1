@@ -10,6 +10,7 @@ const passport = require('passport');
 const  fileUpload = require('express-fileupload');
 const pool = require('./database');
 const { log } = require('console');
+const { DB_PORT} = require('./lib/config')
 require('dotenv').config()
 require('./lib/config')
 
