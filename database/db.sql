@@ -1,4 +1,4 @@
-Create Database is1;
+Create database  is1
 
 use is1;
 

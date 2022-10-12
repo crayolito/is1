@@ -1,9 +1,10 @@
-const mysql = require('mysql');
+const {createPool} = require('mysql');
 const {promisify} = require('util')
 const {database} = require('./keys')
 
+const pool = createPool({database})
 
-const pool = mysql.createPool(database)
+
 pool.getConnection((err,connection)=>{
     if(err){
         if(err.code === 'PROTOCOL_CONNECTION_LOST'){
@@ -13,14 +14,14 @@ pool.getConnection((err,connection)=>{
             console.error('DATABASE HAS TO MANY CONNECTIONS');
         }
         if(err.code === 'ECONNREFUSED'){
-            console.lerrorog('DATABASE CONNECTION WAS REFUSED');
+            console.error('DATABASE CONNECTION WAS REFUSED');
         }
     }
 
     if(connection) connection.release()
     console.log('DB is Connected');
+    return
 }) 
-
 pool.query = promisify(pool.query)
 
 module.exports = pool
